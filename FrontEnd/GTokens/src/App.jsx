@@ -63,45 +63,51 @@ const App = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-4">G Tokens</h1>
-      <button
-        onClick={connectWallet}
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Connect Wallet
-      </button>
-
-      {userAddress && (
-        <div className="mt-4">
-          <p className="text-lg">Connected Wallet: {userAddress}</p>
-          <p className="text-lg">Token Balance: {balance} GT</p>
-        </div>
-      )}
-
-      <div className="mt-8 space-y-4">
-        <input
-          type="text"
-          placeholder="Recipient Address"
-          className="w-full px-4 py-2 border rounded"
-          value={mintAddress}
-          onChange={(e) => setMintAddress(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Amount"
-          className="w-full px-4 py-2 border rounded"
-          value={mintAmount}
-          onChange={(e) => setMintAmount(e.target.value)}
-        />
-        <button
-          onClick={mintTokens}
-          className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-        >
-          Mint Tokens
-        </button>
+    <div
+    className="w-screen h-screen bg-cover bg-center flex flex-col items-center justify-center "
+    style={{
+      backgroundImage: "url('/src/assets/images/34532083_sl_020622_4930_23.jpg')",
+    }}
+  >
+    <h1 className="text-8xl font-bold text-black mb-4">G Tokens</h1>
+    <button
+      onClick={connectWallet}
+      className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    >
+      Connect Wallet
+    </button>
+  
+    {userAddress && (
+      <div className="mt-4 text-white">
+        <p className="text-lg">Connected Wallet: {userAddress}</p>
+        <p className="text-lg">Token Balance: {balance} GT</p>
       </div>
+    )}
+  
+    <div className="mt-8 space-y-4">
+      <input
+        type="text"
+        placeholder="Recipient Address"
+        className="w-full px-4 py-2 border rounded"
+        value={mintAddress}
+        onChange={(e) => setMintAddress(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Amount"
+        className="w-full px-4 py-2 border rounded"
+        value={mintAmount}
+        onChange={(e) => setMintAmount(e.target.value)}
+      />
+      <button
+        onClick={mintTokens}
+        className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+      >
+        Mint Tokens
+      </button>
     </div>
+  </div>
+  
   );
 };
 
